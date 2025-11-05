@@ -3,7 +3,7 @@ on: [push, workflow_dispatch]
 jobs:
   cond:
      runs-on: ubuntu-latest
-     steps:
+     steps: # 이벤트에 따른 스텝을 강제할수 있음!
       - name: Conditional
         if: ${{github.event_name == 'push' }} 
         run: echo "This runs on push events only."

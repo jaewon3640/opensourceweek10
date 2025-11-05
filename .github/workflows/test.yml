@@ -3,7 +3,7 @@ name: Generate and Upload Artifact
 on: 
   push:
     branches:
-      - master
+      - main
 
 jobs:
   generate-file:
@@ -24,10 +24,10 @@ jobs:
       - name: Upload data.txt as artifact
         uses: actions/upload-artifact@v4
         with:
-          name: data-file
+          name: data-file # upload artifact에서 설정한 이름이다.
           path: data.txt
 
-  download-file:
+  download-file: # 다른 job에서의 아티팩트를 가져옴
     needs: generate-file
     runs-on: ubuntu-latest
 
