@@ -2,7 +2,7 @@ name: Python-Test
 on: push
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest #우분투최신 버전에서
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -10,8 +10,8 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'  # Specify your desired Python version here
+          python-version: '3.x'  # 파이썬 버전 3.x
 
       - name: Run unit tests
-        run: |
+        run: | # unit test를 진행한다. test라는 모든 파일을 test하겠다. 
           python -m unittest discover -s . -p "test_*.py"
